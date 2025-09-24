@@ -285,12 +285,12 @@ plt.show()
 print("Gráfica de Tiempo vs Rendimientos generada.")
 
 # Gráfica 4: Gráfica de Caja y Bigotes para los Rendimientos Logarítmicos
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(12, 6)) # Aumentamos el ancho para que se vea mejor
 rendimientos_df = pd.DataFrame({'Rendimientos': rendimientos_log.values.flatten()})
 
-sns.boxplot(y='Rendimientos', data=rendimientos_df, color='lightgreen')
+sns.boxplot(x='Rendimientos', data=rendimientos_df, color='lightgreen')
 plt.title(f'Distribución de Rendimientos Logarítmicos de {TICKER_EMPRESA}\n(Gráfica de Caja y Bigotes)', fontsize=16)
-plt.ylabel('Rendimiento Logarítmico', fontsize=12)
+plt.xlabel('Rendimiento Logarítmico', fontsize=12)
 plt.grid(True, linestyle='--', alpha=0.7)
 plt.tight_layout()
 plt.show()
